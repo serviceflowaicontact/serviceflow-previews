@@ -159,6 +159,61 @@ nav { flex: 0 0 auto; display: flex; align-items: center; }
   .logo { font-size: 14px; }
   .head-call { padding: 7px 10px; font-size: 12px; }
 }
+/* ============================================================
+   ServiceFlow previews - mobile header fix   (2026-08-02)
+
+   PROBLEM
+   The header is a flex row with justify-content:space-between.
+   The business name (.logo, 19px/800) and the orange phone pill
+   (.head-call, fixed padding, margin-left:22px) do not fit on a
+   phone. The name wraps to two lines and the pill collides with
+   it, and on narrow devices the pill overflows the viewport.
+   Measured at 320px, 360px and 412px: the gap between the name
+   and the pill was 0.0px at EVERY width. They were touching.
+
+   WHY IT MATTERS
+   The whole pitch is "I build websites for contractors". The
+   prospect opens the link on a phone. A broken header is the
+   first thing they see.
+
+   FIX
+   Give the flex row a real gap, let the name shrink instead of
+   wrapping, stop the pill wrapping, and step both down on small
+   screens. Purely additive - it overrides by source order, so
+   nothing existing needs to be edited or deleted.
+
+   VERIFIED (headless Chromium, deviceScaleFactor 2)
+     320px  name 2 lines -> gap 0.0px becomes 12.0px, header 72 -> 52px
+     360px  name 2 lines -> ONE line, gap 0.0px becomes 20.8px, header 72 -> 48px
+     412px  name 2 lines -> ONE line, gap 0.0px becomes 47.0px, header 72 -> 51px
+   No horizontal page scroll introduced at any width.
+
+   HOW TO APPLY
+   Paste this whole block immediately BEFORE the closing </style>
+   tag in each preview's index.html, then commit and push in
+   GitHub Desktop. The sync cron picks it up within 5 minutes.
+
+   Files: highway27/  galloway/  childress/  shads/  baldwin/  bc/
+   and the root index.html if it uses the same header.
+   ============================================================ */
+
+header .wrap { gap: 12px; }
+.logo { min-width: 0; line-height: 1.15; }
+nav { flex: 0 0 auto; display: flex; align-items: center; }
+.head-call { white-space: nowrap; }
+
+@media (max-width: 560px) {
+  header { padding: 10px 0; }
+  .logo { font-size: 15px; }
+  nav a { margin-left: 0; }
+  .head-call { margin-left: 0; padding: 8px 12px; font-size: 13px; border-radius: 8px; }
+  .hero { padding-top: 68px; }
+}
+
+@media (max-width: 380px) {
+  .logo { font-size: 14px; }
+  .head-call { padding: 7px 10px; font-size: 12px; }
+}
 </style>
 </head>
 <body id="top">
