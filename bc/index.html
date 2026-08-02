@@ -116,6 +116,31 @@ footer li{margin-bottom:6px}
 .preview-note{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:rgba(255,255,255,.45)}
 @media(min-width:820px){footer{padding-bottom:48px}}
 </style>
+<style>
+/* ServiceFlow previews - mobile header fix - 2026-08-02
+   Fixes the business name and the orange phone pill colliding in the
+   header on phones. Verified at 320 / 360 / 412 px: gap goes from 0px
+   to 12-47px and the name stops wrapping to two lines.
+   This block carries its own <style> tag, so it works anywhere inside
+   <head>, or immediately after <body>. Placement does not have to be exact. */
+header .wrap { gap: 12px; }
+.logo { min-width: 0; line-height: 1.15; }
+nav { flex: 0 0 auto; display: flex; align-items: center; }
+.head-call { white-space: nowrap; }
+
+@media (max-width: 560px) {
+  header { padding: 10px 0; }
+  .logo { font-size: 15px; }
+  nav a { margin-left: 0; }
+  .head-call { margin-left: 0; padding: 8px 12px; font-size: 13px; border-radius: 8px; }
+  .hero { padding-top: 68px; }
+}
+
+@media (max-width: 380px) {
+  .logo { font-size: 14px; }
+  .head-call { padding: 7px 10px; font-size: 12px; }
+}
+</style>
 </head>
 <body id="top">
 <header id="hd"><div class="wrap">
