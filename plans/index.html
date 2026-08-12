@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceFlow — What You Get, What It Costs</title>
+<meta name="description" content="Every number on one page. The build, the guarantees, and the optional monthly plans — no contracts, no lock-in, you own everything.">
+<style>
+:root{--base:#0F2F44;--accent:#0e8f7e;--gold:#F2A03D;--paper:#FAFBFC;--ink:#1A2230;--muted:#5B6675;--line:#e3e8ef}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+section{padding:clamp(34px,5.5vw,60px) 0}
+h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;letter-spacing:-.015em;margin-bottom:14px}
+.hero{background:var(--base);color:#fff;padding:clamp(44px,7vw,70px) 0}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+.hero p{color:rgba(255,255,255,.85);font-size:18px;margin-top:12px;max-width:60ch}
+.build{background:#fff}
+.bcard{background:#fff;border:2px solid var(--accent);border-radius:16px;padding:24px 22px;box-shadow:0 8px 24px rgba(15,47,68,.08)}
+.bprice{font-size:34px;font-weight:800;letter-spacing:-.02em}
+.bprice s{font-size:20px;color:var(--muted);font-weight:600;margin-left:8px}
+.bsub{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:12px}
+.bcard ul{list-style:none;margin-top:6px;columns:2;column-gap:26px}
+@media(max-width:600px){.bcard ul{columns:1}}
+.bcard li{padding:5px 0 5px 22px;position:relative;font-size:14.5px;color:var(--muted);break-inside:avoid}
+.bcard li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+.note{margin-top:14px;color:var(--muted);font-size:14.5px}
+.note b{color:var(--ink)}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 20px;box-shadow:0 8px 24px rgba(15,47,68,.06);position:relative}
+.tier.star{border:2px solid var(--accent)}
+.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 14px;border-radius:999px;white-space:nowrap}
+.tname{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tprice{font-size:32px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+.tprice span{font-size:15px;color:var(--muted);font-weight:600}
+.tsub{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:12px}
+.tier ul{list-style:none;margin-top:6px}
+.tier li{padding:5px 0 5px 22px;position:relative;font-size:14.5px;color:var(--muted)}
+.tier li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+.why{background:var(--base);color:#fff}
+.why p{color:rgba(255,255,255,.85);max-width:64ch;margin-top:10px}
+.why b{color:var(--gold)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 8px 24px rgba(15,47,68,.06)}
+.gcard .t{font-weight:800;font-size:18px;color:var(--base)}
+.gcard p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.need{background:#fff}
+.need ul{list-style:none;margin-top:6px;max-width:66ch}
+.need li{padding:7px 0 7px 26px;position:relative;color:var(--muted)}
+.need li:before{content:"●";position:absolute;left:2px;color:var(--accent)}
+.need li b{color:var(--ink)}
+.cta{background:var(--base);color:#fff;text-align:center}
+.cta p{color:rgba(255,255,255,.85);max-width:56ch;margin:12px auto 22px}
+.btn{display:inline-block;background:var(--gold);color:var(--base);font-weight:800;padding:16px 30px;border-radius:12px;text-decoration:none;font-size:17px}
+.cta .alt{margin-top:14px;font-size:14px;color:rgba(255,255,255,.7)}
+.cta .alt a{color:#fff}
+footer{background:#0a2233;color:rgba(255,255,255,.6);padding:26px 0;font-size:13px;text-align:center}
+</style></head>
+<body>
+
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">ServiceFlow · Local Lead Engine</div>
+  <h1>What you get, what it costs.</h1>
+  <p>Every number on one page. No contracts, no lock-in, and you own everything — the domain, the site, and every lead it brings in.</p>
+</div></div>
+
+<section class="build"><div class="wrap">
+  <h2>The build — pay once, own it forever</h2>
+  <div class="bcard">
+    <div class="bprice">$997 <s>$1,500</s></div>
+    <div class="bsub">Founding price — 2 spots, in exchange for a testimonial once you're seeing leads</div>
+    <ul>
+      <li>Full 8–20 page website, built for your trade</li>
+      <li>A page for every service you offer</li>
+      <li>A page for every town you serve</li>
+      <li>Full SEO foundation — titles, schema, sitemap</li>
+      <li>Google Business Profile set up and linked</li>
+      <li>Lead form + click-to-call, straight to your phone</li>
+      <li>Your real photos and real reviews built in</li>
+      <li>Live in 14 days of kickoff — or it's free</li>
+    </ul>
+  </div>
+  <p class="note"><b>The domain is yours from day one.</b> Registered in your name, bought directly by you (about $15/yr to the registrar, not to us). Nobody can ever hold it hostage — including us.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>After launch — three ways to run it</h2>
+  <div class="tiers">
+    <div class="tier">
+      <div class="tname">Hosting</div>
+      <div class="tprice">$19<span>/mo</span></div>
+      <div class="tsub">First month free</div>
+      <ul>
+        <li>Site stays live, fast, and secure</li>
+        <li>Quote requests keep reaching you</li>
+        <li>Domain stays in your name</li>
+        <li>Changes billed only as needed</li>
+      </ul>
+    </div>
+    <div class="tier star">
+      <div class="badge">★ MOST POPULAR</div>
+      <div class="tname">Care Plan</div>
+      <div class="tprice">$99<span>/mo</span></div>
+      <div class="tsub">Somebody's watching the machine</div>
+      <ul>
+        <li>Everything in Hosting</li>
+        <li>Small edits done within 48 hours — hours, photos, prices, services, a storm banner</li>
+        <li>Uptime monitoring — we know it's down before your customers do</li>
+        <li>Monthly backup of the whole site</li>
+        <li>Security updates handled</li>
+        <li>One number to text when anything needs changing</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tname">Growth</div>
+      <div class="tprice">$199<span>/mo</span></div>
+      <div class="tsub">We work the marketing too</div>
+      <ul>
+        <li>Everything in Care</li>
+        <li>We run your Google Business Profile — fresh posts and photos</li>
+        <li>Every review gets a response, in your voice</li>
+        <li>Hours, services, and service area kept current on Google</li>
+        <li>Monthly one-page report — calls, views, leads</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <h2>Why pay monthly at all?</h2>
+  <p>Your website is a machine that answers Google for you 24 hours a day. <b>Hosting keeps the machine plugged in. Care means somebody's watching it. Growth means somebody's feeding it.</b></p>
+  <p>Every plan is optional, month to month, cancel anytime — and the site is still yours if you do. That's the point: it's service on something you own, not rent on something we're holding. One decent job the site brings in covers a year of the Care Plan.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Two guarantees, in plain English</h2>
+  <div class="g2">
+    <div class="gcard"><div class="t">Live in 14 days or it's free.</div><p>The clock starts when you've paid and we have your photos and info. If we miss it, you don't pay — and you keep the site.</p></div>
+    <div class="gcard"><div class="t">30-day money-back.</div><p>Decide within 30 days it's not for you — full refund. Your domain stays yours either way; it's in your name from day one.</p></div>
+  </div>
+</div></section>
+
+<section class="need"><div class="wrap">
+  <h2>What we need from you — about 5 minutes</h2>
+  <ul>
+    <li><b>5–15 real photos</b> of your work, straight off your phone</li>
+    <li><b>Your logo</b> if you have one — no logo, no problem</li>
+    <li><b>Your services and the towns you cover</b> — a text message is fine</li>
+    <li><b>Where leads should go</b> — the phone number and email you actually answer</li>
+    <li><b>Pay the invoice and reply "Agreed"</b> to the one-page agreement — that starts the 14-day clock</li>
+    <li>On the Growth plan: a 2-minute step adding us as a <b>manager on your Google profile</b> — you stay the owner, and you can remove us anytime</li>
+  </ul>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <h2>Questions? Call the person who builds it.</h2>
+  <p>No agency retainer and no site held hostage. You pay once, you own it outright, and you're live in 14 days from kickoff. Add a plan later if you want us maintaining it.</p>
+  <a class="btn" href="tel:+12512702313">☎ Call or text (251) 270-2313</a>
+  <div class="alt">or email <a href="mailto:adam@myserviceflowapp.com">adam@myserviceflowapp.com</a></div>
+</div></section>
+
+<footer><div class="wrap">ServiceFlow AI LLC · Gulf Shores, Alabama · (251) 270-2313 · adam@myserviceflowapp.com<br>Websites for the trades, built by people who rank their own.</div></footer>
+</body></html>
